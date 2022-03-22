@@ -78,6 +78,43 @@ public class DBBean {
 			disconnect();
 		}
 		return idDuplication;
+	} // end confirmId() ====================================
+	// 회원가입 폼에서 입력한 데이터들을 member 테이블에 insert하는 메소드 구현
+	public boolean insertDB() {
+		connect();  // [중요] 재사용 개념
+		try {
+			String MEMBER_INSERT = "insert into member values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			
+			pstmt = conn.prepareStatement(MEMBER_INSERT);
+			String mem_email = mem_email_id + "@" + mem_email_domain;
+			
+			pstmt.setString(1, mem_id);
+			pstmt.setString(2, mem_passwd);
+			pstmt.setString(3, mem_name);
+			pstmt.setString(4, mem_nickname);
+			pstmt.setString(5, mem_email);
+			pstmt.setString(6, mem_num1);
+			pstmt.setString(7, mem_num2);
+			pstmt.setString(8, mem_phone);
+			pstmt.setString(9, mem_gender);
+			pstmt.setInt(10, mem_Birthday1);
+			pstmt.setInt(11, mem_Birthday2);
+			pstmt.setInt(12, mem_Birthday3);
+			pstmt.setString(13, mem_job);
+			pstmt.setString(14, zipCode);
+			pstmt.setString(15, userAddress1);
+			pstmt.setString(16, userAddress2);
+			pstmt.setString(17, userAddress3);
+			
+			// DML (insert, update, delete 등) 작업 시 executeUpdate() 메소드 호출함!! / select 할때는 executeQuery()
+			pstmt.executeUpdate();
+			
+		} catch(Exception e) {
+			System.out.println("insertDB()" + e);
+		} finally {
+			disconnect();  // 자원해제
+		}
+		return true;
 	}
 	
 	// 멤버변수 하나당 getter, setter 메소드 구현

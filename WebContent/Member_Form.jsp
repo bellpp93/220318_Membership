@@ -5,6 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입 폼 만들기</title>
+<!-- js 폴더에 있는 3개의 .js 파일들을 연결하기 -->
+<script src="./js/idCheck.js"></script>
+<script src="./js/change_email.js"></script>
+<script src="./js/juminCheck.js"></script>
 <style>
 	.title { margin:40px 30px 30px 30px; }
 	.container { width:900px; }
@@ -20,6 +24,8 @@
 </head>
 <body>
 	<form name="memberForm" method="POST" action="Member_control.jsp">
+		<!-- hidden 객체도 같이 넘어간다. -->
+		<input type="hidden" name="action" value="insert" />
 		<div align="center">
 			<h1 class="title">회원가입</h1>
 			<div class="container">
@@ -37,7 +43,8 @@
 								<input type="text" name="mem_id"
 									   placeholder="6자 이상의 영문과 숫자"
 									   required autofocus />
-								<input type="button" value="ID중복확인" />
+								<input type="button" value="ID중복확인" 
+									   onClick="idCheck(mem_id.value)" />
 							</td>
 						</tr>
 						<tr>
@@ -72,8 +79,7 @@
 							<td>
 								<input type="text" name="email_id"/> @</label>
 								<input type="text" name="email_domain" id="email_add" />
-								<select name="email_select" id="email_select"
-										onchange="change_email();">
+								<select name="email_select" id="email_select" onchange="change_email();">
 									<option selected>직접 옵션 선택입력</option>
 									<option value="naver.com">naver</option>
 									<option value="hanmail.net">daum</option>
