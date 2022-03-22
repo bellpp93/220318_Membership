@@ -77,8 +77,8 @@
 						<tr>
 							<td>이메일<span class="red">*</span></td>
 							<td>
-								<input type="text" name="email_id"/> @</label>
-								<input type="text" name="email_domain" id="email_add" />
+								<input type="text" name="mem_email_id"/> @</label>
+								<input type="text" name="mem_email_domain" id="email_add" />
 								<select name="email_select" id="email_select" onchange="change_email();">
 									<option selected>직접 옵션 선택입력</option>
 									<option value="naver.com">naver</option>
@@ -93,13 +93,13 @@
 						<tr>
 							<td>주민번호<span class="red">*</span></td>
 							<td>
-								<input type="text" name="jumin_num1" size="6"
-								onKeyUp="if(this.value.length == 6) juminForm.jumin_num2.focus();" /> -
+								<input type="text" name="mem_num1" size="6"
+								onKeyUp="if(this.value.length == 6) juminForm.mem_num2.focus();" /> -
 								<!-- 이벤트 핸들러 onKeyUp 다음에 명령줄이 온다. -->
 								<input type="text"
-								name="jumin_num2" size="7" /> <input type="button"
+								name="mem_num2" size="7" /> <input type="button"
 								value="주민번호 체크 버튼"
-								onClick="juminCheck(jumin_num1.value, jumin_num2.value)" />
+								onClick="juminCheck(mem_num1.value, mem_num2.value)" />
 								<!-- 이벤트 핸들러 onClick 다음에 함수가 온다. -->
 							</td>
 						</tr>
@@ -129,21 +129,21 @@
 									var start = toyear
 									var end = toyear - 80
 									
-									document.write("<select name=mem_year>")
+									document.write("<select name=mem_Birthday1>")
 									
 									for(i=start; i>=end; i--) {
 										document.write("<option value='"+i+"'>"+i)
 									}
 									document.write("</select>년")
 									
-									document.write("<select name=mem_month>")
+									document.write("<select name=mem_Birthday2>")
 									
 									for(i=1; i<=12; i++) {
 										document.write("<option value='"+i+"'>"+i)
 									}
 									document.write("</select>월")
 									
-									document.write("<select name=mem_day>")
+									document.write("<select name=mem_Birthday3>")
 									
 									for(i=1; i<=31; i++) {
 										document.write("<option value='"+i+"'>"+i)

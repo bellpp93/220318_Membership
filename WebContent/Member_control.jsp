@@ -16,7 +16,7 @@
 
 	if(action.equals("insert")) {
 		if(mem.insertDB()) {
-			response.sendRedirect("welcome.jsp");
+			response.sendRedirect("Welcome.jsp");
 			System.out.println("member 테이블에 데이터 입력 성공!!");
 		} else {
 			response.sendRedirect("Member_Form.jsp");
