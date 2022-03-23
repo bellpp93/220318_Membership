@@ -31,7 +31,7 @@
 					} else {
 				%>
 				<br>
-				<%= mem_id %>는 사용 가능한 ID입니다.&nbsp;<br><br>
+				<%= mem_id %>는 사용 가능한 ID 입니다.&nbsp;<br><br>
 				<input type="button" value="닫기" 
 				onClick="javascript:self.close(); opener.document.memberForm.mem_passwd.focus();"/>
 				<%

@@ -22,9 +22,9 @@ public class DBBean {
 	private int mem_Birthday3;			// 출생일
 	private String mem_job;				// 직업
 	private String zipCode;				// 우편번호 
-	private String userAddr1;		// 주소
-	private String userAddr2;		// 상세주소
-	private String userAddr3;		// 참고항목
+	private String userAddr1;			// 주소
+	private String userAddr2;			// 상세주소
+	private String userAddr3;			// 참고항목
 	
 	// 오라클 DB 연동에 관련된 변수 선언
 	Connection			conn = null;

@@ -29,7 +29,7 @@ function juminCheck(jumin1, jumin2) {
 			
 			if(result != juminNum.charAt(12)) {
 				alert('입력한 주민번호는 틀린 번호입니다!!')
-				document.juminForm.jumin_num1.focus()
+				document.juminForm.mem_num1.focus()
 			} else {
 				alert('입력한 주민번호는 정상인 주민번호 입니다.')
 			}
